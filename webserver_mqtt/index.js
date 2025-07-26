@@ -56,7 +56,10 @@ mqtt_client.on("connect", () => {
 mqtt_client.on("message", (topic, message) => {
     // message is Buffer
     console.log(message_path + ": " + message.toString());
-    AddToDB(message);
+    if(message.toString().startsWith("USER_EVENT:")){
+
+        AddToDB(message.toString().substring(11));
+    }
     
     //client.end(); // enabling this shut down the server after a message
 });
