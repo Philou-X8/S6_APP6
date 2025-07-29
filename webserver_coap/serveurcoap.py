@@ -1,3 +1,9 @@
+#-------------------------------
+# S6 - APP6
+# BREL0901
+# DURP2003
+#-------------------------------
+
 import asyncio
 from aiocoap import Context, Message, CHANGED
 from aiocoap.resource import ObservableResource
